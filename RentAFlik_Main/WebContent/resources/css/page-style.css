@@ -1,0 +1,87 @@
+.order-table{   
+	border-collapse:collapse;
+	border:3px solid #000000;
+}
+
+.order-table-header{
+	text-align:center;
+	background:none repeat scroll 0 0 #E5E5E5;
+	border-bottom:1px solid #000000;
+	padding:10px;
+
+}
+
+.order-table-odd-row{
+	text-align:center;
+	background:none repeat scroll 0 0 #FFFFFFF;
+	border-top:1px solid #444444;
+}
+
+.order-table-even-row{
+	text-align:center;
+	background:none repeat scroll 0 0 #F9F9F9;
+	border-top:1px solid #444444;
+}
+
+body {background-color: #acc;}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+  font-size:16px;
+}
+
+li a:hover {
+  background-color: #111111;
+}
+	
+#SearchLabel {
+   display: block;
+  color: white;
+  text-align: right;
+  padding: 16px;
+  text-decoration: none;
+  font-size:25px;
+}	
+#SearchTextBox {
+  display: block;
+  padding: 16px;
+  float: left;
+  margin: 0;
+}		
+#logoImg {
+  padding: 5px;
+  display: block;
+}	
+
+#mForm\:newRelLabel\:videoList {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width:100%;
+  margin: auto;
+  overflow-x:scroll;
+  overflow-y:hidden;
+  background-color: #888888;
+}
+
+#mForm\:newRelLabel\:videoList\:vidImg {
+  flex: 0 0 auto;
+  margin: auto;
+  padding: 3px;
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<ui:composition template = "/layouts/commonLayout.xhtml">	
+	<ui:define name = "commonContent">
+	<body style="background-color: #acc"> 
+		<h:panelGrid columns="2">
+		<h:graphicImage value="/images/#{productss.searchProd.vidImg}"/> <br></br>
+		<h:outputLabel value="Movie Title:" /> 
+		<h:outputLabel value="#{productss.searchProd.title}" />
+		<h:outputLabel value="Genre:" />
+		<h:outputLabel value="#{productss.searchProd.genre}" />
+		<h:outputLabel value="Lead Actor:" />
+		<h:outputLabel value="#{productss.searchProd.leadAct}" />
+		<h:outputLabel value="Studio:" />
+		<h:outputLabel value="#{productss.searchProd.studio}" />
+		<h:outputLabel value="Director:" />
+		<h:outputLabel value="#{productss.searchProd.director}" />
+		<h:outputLabel value="Length:" />
+		<h:outputLabel value="#{productss.searchProd.length}" />
+		<h:outputLabel value="Release Year:" />
+		<h:outputLabel value="#{productss.searchProd.year}" />
+		<h:outputLabel value="Rental Price $:" />
+		<h:outputLabel value="#{productss.searchProd.price}" />
+		</h:panelGrid>
+	</body> 
+	</ui:define>	
+</ui:composition>
+</html>

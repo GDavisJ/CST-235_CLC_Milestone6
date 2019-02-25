@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+<title>RentAFlik Video Rentals</title>
+	<style>
+	body {background-color: #acc;}
+	h1   {color: black;}
+	
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+  font-size:16px;
+}
+
+li a:hover {
+  background-color: #111111;
+}
+	
+#SearchLabel {
+   display: block;
+  color: white;
+  text-align: right;
+  padding: 16px;
+  text-decoration: none;
+  font-size:25px;
+}	
+#SearchTextBox {
+  display: block;
+  padding: 16px;
+  float: left;
+  margin: 0;
+}		
+#logoImg {
+  padding: 5px;
+  display: block;
+}	
+
+
+
+#videoList {
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  width:100%;
+
+  overflow-x:scroll;
+  overflow-y:hidden;
+  background-color: #888888;
+  left:0px;
+}
+
+#vidImg {
+  flex: 0 0 auto;
+  padding: 3px;
+}
+
+
+	</style></h:head> 
+
+<body>
+		<h1 style="text-align:center;">Rent-A-Flik</h1>
+<h:form>
+	<ul>
+		<li id="logoImg"><h:graphicImage id="logoImage" width="84px" height="66.5px" value="/images/Logo.PNG"/> </li>
+  		<li><a href="MainForm.xhtml">Home</a></li>
+  		<li><a href="News.xhtml">News</a></li>
+  		<li><a href="Contact.xhtml">Contact</a></li>
+  		<li><a href="About.xhtml">About</a></li>
+  		<li id="SearchTextBox"><h:inputText style="font-size:16px; width:200px;" value="#{productss.testInput}"/></li>
+  		<li style="display:block; text-align:center; margin-top: 16px; margin-left: 0px;"><h:commandButton action="#{productss.searchTest}" value="Search" /></li>
+  		<li><h:commandLink style="float:right;" value="Logout" action="#{mainFormController.onLogoff()}"></h:commandLink></li>
+  		<li><a href="AllProducts.xhtml">Product Details</a></li>
+	</ul><p></p>
+
+	
+	
+	
+	
+	<label id ="newRelLabel" style="font-size:25px; color:#111111; margin-top:10px; padding:0;">New Releases:</label>
+			<ul id="videoList">
+			<li id="vidImg"><h:panelGrid columns="50" value="#{productss.productss}" var = "odr">
+			<ui:repeat  var="o" value="#{productss.productss}" varStatus="status">
+			<!-- <h:graphicImage value="/images/#{o.vidImg}"/>-->
+			
+			<h:commandButton action="#{productss.testMovie}" image="/images/#{o.vidImg}"/>
+			
+
+			</ui:repeat>
+			</h:panelGrid></li>
+
+		</ul><p></p><p></p>
+		
+
+	</h:form>
+	
+
+	
+	
+	<ui:insert name = "commonFooter" >
+    	<ui:include src = "/layouts/commonFooter.xhtml" />
+    </ui:insert>
+</body> 
+</html>

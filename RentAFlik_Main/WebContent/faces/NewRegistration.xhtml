@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+     <ui:define name="tags"></ui:define>
+<h:head>
+<title> JSF Form Page</title>
+</h:head> 
+ <ui:composition>
+<body> 
+<form action="MainFormController" method="post">
+<label>User Name:</label>
+<h:inputText value="#{EnterpriseRegistration.userName}" name = "userName"/><br/>
+<label>Email Address:</label>
+<h:inputText value="#{EnterpriseRegistration.emailAddress}" name="emailAddress"/><br/>
+<label>Password:</label>
+<h:inputSecret value="#{EnterpriseRegistration.passWord}" name="password"/><br/>
+<label>First Name:</label>
+<h:inputText value="#{EnterpriseRegistration.firstName}" name="firstName"/><br/>
+<label>LastName:</label>
+<h:inputText value="#{EnterpriseRegistration.lastName}" name = "lastName"/><br/>
+<input type="submit" value="Submit"/>
+</form>
+</body> 
+</ui:composition>
+</html>

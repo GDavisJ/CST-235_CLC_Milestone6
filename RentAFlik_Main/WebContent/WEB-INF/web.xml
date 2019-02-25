@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>RentAFlik_Main</display-name>
+  <welcome-file-list>
+    <welcome-file>MainForm.xhtml</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>Faces Servlet</servlet-name>
+    <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Faces Servlet</servlet-name>
+    <url-pattern>/faces/*</url-pattern>
+  </servlet-mapping>
+  <context-param>
+    <param-name>javax.faces.INTERPET_EMPTY_STING_SUBMITTED_AS_NULL</param-name>
+    <param-value>true></param-value>
+  </context-param>
+  <servlet-mapping>
+    <servlet-name>Resteasy Servlet</servlet-name>
+    <url-pattern>/rest/*</url-pattern>
+  </servlet-mapping>
+  <context-param>
+    <param-name>resteasy.scan</param-name>
+    <param-value>true</param-value>
+  </context-param>
+  <context-param>
+    <param-name>resteasy.servlet.mapping.prefix</param-name>
+    <param-value>/rest</param-value>
+  </context-param>
+  <listener>
+    <listener-class>
+            org.jboss.resteasy.plugins.server.servlet.ResteasyBootstrap
+            </listener-class>
+  </listener>
+  <servlet>
+    <servlet-name>Resteasy Servlet</servlet-name>
+    <servlet-class>
+            org.jboss.resteasy.plugins.server.servlet.HttpServletDispatcher
+        </servlet-class>
+  </servlet>
+  
+      <!-- Security Configuration --> 
+  <security-constraint>
+        <display-name>RentAFlik Test Application Security Constraints</display-name>
+        <web-resource-collection>
+            <web-resource-name>Protected</web-resource-name>
+    		<description>Protect all pages in Web Root</description>
+            <url-pattern>/*</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <description/>
+            <role-name>RafUser</role-name>
+        </auth-constraint>
+   </security-constraint>
+   <security-constraint>
+  		<web-resource-collection>
+    		<web-resource-name>Public</web-resource-name>
+    		<description>Do not Protect Web Services and JSF Resources</description>
+    		<url-pattern>/rest/*</url-pattern>
+    		<url-pattern>faces/rest/*</url-pattern>
+    		<url-pattern>/javax.faces.resources/*</url-pattern>
+    		<url-pattern>/resources/*</url-pattern>
+    		<url-pattern>/javax.faces/*</url-pattern>
+    		<url-pattern>*.css</url-pattern>
+    		<url-pattern>*.jar</url-pattern>
+    		<url-pattern>/javax.faces.images/*</url-pattern>
+    		<url-pattern>/RentAFlik_Main/faces/javax.faces.resource/images/*</url-pattern>
+    		<url-pattern>/faces/javax.faces.resource/images/*</url-pattern>
+    		<url-pattern>/faces/javax.faces.resource/*</url-pattern>
+    		<url-pattern>/faces/WEB-INF/lib/*.jar</url-pattern>
+    		<url-pattern>/faces/UpdatedRegisrationForm.jsp</url-pattern>
+    		<url-pattern>theme.css</url-pattern>
+   		</web-resource-collection>
+	</security-constraint>
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <realm-name>ApplicationRealm</realm-name>
+        <form-login-config>
+            <form-login-page>/faces/LoginForm.xhtml</form-login-page>
+            <form-error-page>/faces/LoginError.xhtml</form-error-page>
+        </form-login-config>
+    </login-config>
+   <security-role>
+        <description/>
+        <role-name>RafUser</role-name>
+   </security-role>
+</web-app>

@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head>
+<title>Login Page</title>
+</h:head> 
+
+	<ui:composition template = "/layouts/commonLayout.xhtml">	
+	<ui:define name = "commonContent">
+	<body style="background-color: #acc"> 			
+
+<h:form id="loginForm">
+<!--The login page takes in the user submitted data and calls on the login()
+	function with the User.java class. A standard inputText is used for the 
+	username while inputSecret is used for the password as per standard with 
+	passwords. -->
+	<h:outputLabel value="username" /> &nbsp;
+	<h:inputText style="width:100px;" value="#{EnterpriseUser.userName}" /><br /><br />
+	<h:outputLabel value="password"/> &nbsp;
+	<h:inputSecret style="width:100px;" value="#{EnterpriseUser.password}"></h:inputSecret><br /><br />
+	<h:commandButton action="#{EnterpriseUser.login}" value="Login"></h:commandButton>&nbsp;
+	<h:button value="Register" outcome="UpdatedRegisrationForm.jsp"></h:button>
+</h:form>
+</body> 
+    </ui:define>	
+	</ui:composition> 
+
+</html>

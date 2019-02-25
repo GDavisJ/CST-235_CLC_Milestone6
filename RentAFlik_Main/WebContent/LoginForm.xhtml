@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+> 
+
+<h:head><title>Login Form Page</title></h:head> 
+<h:body style="background-color: #acc"> 
+			<h1 style="text-align:center;">Rent-A-Flik</h1>
+			<div align="center"> 			
+				<form  method="post" action="j_security_check">
+					<h:panelGrid columns="2">
+						Username: <h:inputText style="width:100px;" id="j_username" autocomplete="off" />
+						Password: <h:inputSecret style="width:100px;" id="j_password" autocomplete="off" />
+						
+					</h:panelGrid>
+					<h:commandButton style="text-align:center; margin:2px;" type="submit" value="Submit"/><br></br>
+					<a href="UpdatedRegisrationForm.jsp" style="text-align:center; padding:8px;">Registration</a>
+					
+				</form>
+				<h:messages />
+			</div>
+			<h5 style="text-align:center;">@Copyright Rent-A-Flik</h5>
+			
+			
+
+
+</h:body> 
+
+</html>

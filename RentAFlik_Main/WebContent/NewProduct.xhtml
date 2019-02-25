@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<ui:composition template = "/layouts/commonLayout.xhtml">	
+	<ui:define name = "commonContent">
+	
+	<body style="background-color: #acc"> 
+		<!-- This form is used to add products -->
+		<h:form id="newProductForm">
+	
+		<h:panelGrid columns="3">
+		<h:outputLabel value="Movie ID:" /> 
+		<h:inputText value="#{productUser.id}" /><br /><br />
+		<h:outputLabel value="Movie Title:" /> 
+		<h:inputText value="#{productUser.title}" /><br /><br />
+		<h:outputLabel value="Genre:" />
+		<h:inputText value="#{productUser.genre}" /><br /><br />
+		<h:outputLabel value="Lead Actor:" />
+		<h:inputText value="#{productUser.leadAct}" /><br /><br />
+		<h:outputLabel value="Studio:" />
+		<h:inputText value="#{productUser.studio}" /><br /><br />
+		<h:outputLabel value="Director:" />
+		<h:inputText value="#{productUser.director}" /><br /><br />
+		<h:outputLabel value="Length:" />
+		<h:inputText value="#{productUser.length}" /><br /><br />
+		<h:outputLabel value="Release Year:" />
+		<h:inputText value="#{productUser.year}" /><br /><br />
+		<h:outputLabel value="Rental Price $:" />
+		<h:outputLabel value="#{productUser.price}" /><br /><br />
+		<h:outputLabel value="Video Image File (.PNG):" />
+		<h:inputText value="#{productUser.vidImg}" /><br /><br />
+		</h:panelGrid>
+		<h:commandButton action ="#{productss.addProd(productUser)}" value="Add Product">
+		</h:commandButton>
+		<br/><br/>
+		
+		</h:form>
+	</body> 
+	</ui:define>	
+</ui:composition>
+</html>

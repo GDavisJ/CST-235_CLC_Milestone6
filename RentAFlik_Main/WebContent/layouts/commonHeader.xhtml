@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+	<ui:composition>
+	<h:outputStylesheet library="css" name="page-style.css"  />
+		<h1 style="text-align:center;">Rent-A-Flik</h1>
+		<h:form>
+	<ul>
+		<li id="logoImg"><h:graphicImage id="logoImage" width="84px" height="66.5px" value="/images/Logo.PNG"/> </li>
+  		<li><a href="MainForm.xhtml">Home</a></li>
+  		<li><a href="News.xhtml">News</a></li>
+  		<li><a href="Contact.xhtml">Contact</a></li>
+  		<li><a href="About.xhtml">About</a></li>
+  		<li id="SearchTextBox"><h:inputText style="font-size:16px; width:200px;" value="#{productss.testInput}"/></li>
+  		<li style="display:block; text-align:center; margin-top: 16px; margin-left: 0px;"><h:commandButton action="#{productss.searchTest}" value="Search" /></li>
+  		<li><h:commandLink style="float:right;" value="Logout" action="#{mainFormController.onLogoff()}"></h:commandLink></li>
+  		<li><a href="AllProducts.xhtml">Product Details</a></li>
+	</ul><p></p>
+	</h:form>
+	</ui:composition>
+</body> 
+</html>
